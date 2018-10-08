@@ -14,4 +14,3 @@ api.get('/', (req, res) => {
 api.get('/user', User.register)
 
 module.exports = api
-

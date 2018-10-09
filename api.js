@@ -3,14 +3,18 @@
 const express = require('express')
 const api = express.Router()
 
-const User = require('./api/v1/user/user')
+const User = require('./api/v1/user')
+const Auth = require('./api/v1/auth')
+const Contact = require('./api/v1/contact')
+
+api.use('/user', User)
+api.use('/auth', Auth)
+api.use('/contact', Contact)
 
 api.get('/', (req, res) => {
   res.send({
     message: 'AddressBook API'
   })
 })
-
-api.get('/user', User.register)
 
 module.exports = api
